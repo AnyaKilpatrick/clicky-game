@@ -1,0 +1,11 @@
+#start{
+    color:#e65d27;
+    border:solid #000000bb 2px;
+    border-radius:15px;
+    font-weight:bold;
+    font-size:28px;
+    font-family: 'Jua', sans-serif;
+}
+#jumbotron {
+    padding-top:140px;
+}
