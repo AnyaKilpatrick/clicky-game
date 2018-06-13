@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Angelica",
+        "image": "angelica.jpg"
+    },
+    {
+        "name": "Angelica",
+        "image": "angelica2.jpg"
+    },
+    {
+        "name": "Chuckie",
+        "image": "chuckie.png"
+    },
+    {
+        "name": "Kimmi",
+        "image": "kimmi.png"
+    },
+    {
+        "name": "Kimmi",
+        "image": "kimmi2.png"
+    },
+    {
+        "name": "Rugrats",
+        "image": "rugrats.jpg"
+    },
+    {
+        "name": "Rugrats",
+        "image": "rugrats2.jpg"
+    },
+    {
+        "name": "Susie",
+        "image": "susie.jpg"
+    },
+    {
+        "name": "Susie",
+        "image": "susie2.jpg"
+    },
+    {
+        "name": "Tommy",
+        "image": "tommy.jpg"
+    },
+    {
+        "name": "Tommy",
+        "image": "tommy.png"
+    },
+    {
+        "name": "Twins",
+        "image": "twins.png"
+    }
+]
