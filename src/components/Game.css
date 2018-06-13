@@ -1,0 +1,10 @@
+img {
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    margin:15px;
+}
+img:hover{
+    box-shadow:0 10px 16px 0 #00000077, 0 12px 26px 0 #0000006e;
+    /* box-shadow: 10px 10px 10px 10px grey; */
+}
