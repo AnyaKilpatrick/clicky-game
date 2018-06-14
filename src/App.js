@@ -31,14 +31,25 @@ class App extends React.Component {
   }
 
   // updating score and topScore every time we click image
-  handleIncrement =()=>{
+  handleIncrement =(event)=>{
     const newScore = this.state.score + 1;
-    // decrement score by 1 each time you click on image
+    // increment score by 1 each time you click on image
     this.setState({score: newScore});
     // if score is higher then topScore then update topScore
     if(newScore > this.state.topScore){
       this.setState({topScore:newScore});
     }
+    const target = event.target.id;//before shuffling we grab target's id
+    this.clickedImage(target); //passing id as an arument to the next function
+  }
+
+  //update img (set "clikced" to true)
+  clickedImage = (target) => {
+    const tempArr = this.state.imgArr;
+    tempArr[target].clicked = true; //setting target's property "clicked" to true;
+    this.setState({imgArr: tempArr}); //updating imgArr
+
+    // shuffle array
     this.shuffleArray();
   }
 
@@ -60,6 +71,7 @@ class App extends React.Component {
             {this.state.imgArr.map((oneImg, index)=>
               <Game
                 key={index}
+                index={index}
                 name={oneImg.name}
                 image={"./images/"+oneImg.image}
                 handleIncrement={this.handleIncrement}

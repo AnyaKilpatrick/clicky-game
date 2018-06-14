@@ -1,50 +1,62 @@
 [
     {
         "name": "Angelica",
-        "image": "angelica.jpg"
+        "image": "angelica.jpg",
+        "clicked": false
     },
     {
         "name": "Angelica",
-        "image": "angelica2.jpg"
+        "image": "angelica2.jpg",
+        "clicked": false
     },
     {
         "name": "Chuckie",
-        "image": "chuckie.png"
+        "image": "chuckie.png",
+        "clicked": false
     },
     {
         "name": "Kimmi",
-        "image": "kimmi.png"
+        "image": "kimmi.png",
+        "clicked": false
     },
     {
         "name": "Kimmi",
-        "image": "kimmi2.png"
+        "image": "kimmi2.png",
+        "clicked": false
     },
     {
         "name": "Rugrats",
-        "image": "rugrats.jpg"
+        "image": "rugrats.jpg",
+        "clicked": false
     },
     {
         "name": "Rugrats",
-        "image": "rugrats2.jpg"
+        "image": "rugrats2.jpg",
+        "clicked": false
     },
     {
         "name": "Susie",
-        "image": "susie.jpg"
+        "image": "susie.jpg",
+        "clicked": false
     },
     {
         "name": "Susie",
-        "image": "susie2.jpg"
+        "image": "susie2.jpg",
+        "clicked": false
     },
     {
         "name": "Tommy",
-        "image": "tommy.jpg"
+        "image": "tommy.jpg",
+        "clicked": false
     },
     {
         "name": "Tommy",
-        "image": "tommy.png"
+        "image": "tommy.png",
+        "clicked": false
     },
     {
         "name": "Twins",
-        "image": "twins.png"
+        "image": "twins.png",
+        "clicked": false
     }
 ]
