@@ -12,13 +12,45 @@ import './App.css';
 class App extends React.Component {
 
   state = {
-    imgArr: Imgs
+    imgArr: Imgs,
+    score:0,
+    topScore:0
   };
+
+  // Randomize array element order in-place.
+  // Using Durstenfeld shuffle algorithm.
+  shuffleArray =()=>{
+    let tempArr = this.state.imgArr;
+    for (let i =  tempArr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = tempArr[i];
+        tempArr[i] = tempArr[j];
+        tempArr[j] = temp;
+    }
+    this.setState({imgArr:tempArr});
+  }
+
+  // updating score and topScore every time we click image
+  handleIncrement =()=>{
+    const newScore = this.state.score + 1;
+    // decrement score by 1 each time you click on image
+    this.setState({score: newScore});
+    // if score is higher then topScore then update topScore
+    if(newScore > this.state.topScore){
+      this.setState({topScore:newScore});
+    }
+    this.shuffleArray();
+  }
+
+
 
   render(){
     return (
       <Wrapper>
-        <Header/>
+        <Header
+        score={this.state.score}
+        topScore={this.state.topScore}
+        />
         <Jumbotron/>
         <div className="container" id="game">
           <div className="row justify-content-center">
@@ -30,6 +62,7 @@ class App extends React.Component {
                 key={index}
                 name={oneImg.name}
                 image={"./images/"+oneImg.image}
+                handleIncrement={this.handleIncrement}
               />
             )}
           </div>
