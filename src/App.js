@@ -14,10 +14,11 @@ class App extends React.Component {
   state = {
     imgArr: Imgs,
     score:0,
-    topScore:0
+    topScore:0,
+    message: "Welcome!"
   };
 
-  
+// ======== SHUFFLE IMAGES
   shuffleArray =()=>{ // Randomize array element order in-place. Using Durstenfeld shuffle algorithm.
     let tempArr = this.state.imgArr;
     for (let i =  tempArr.length - 1; i > 0; i--) {
@@ -29,7 +30,7 @@ class App extends React.Component {
     this.setState({imgArr:tempArr});
   }
 
-  
+  //======== UPDATE SCORE
   handleIncrement =(event)=>{ // updating score and topScore every time we click image
     const targetIndex = event.target.id;//grab target's id
 
@@ -41,25 +42,15 @@ class App extends React.Component {
       if(newScore > this.state.topScore){
         this.setState({topScore:newScore});
       }
-      
       this.clickedImage(targetIndex); //passing id as an arument to the next function
-    }else{ //if this image was clicked before
-      alert("Oops");
-      this.setState({score:0});//set score back to 0
-
-      const tempArr = this.state.imgArr;
-      for(let i=0; i<tempArr.length;i++){
-        tempArr[i].clicked = false;
-      }
-      this.setState({imgArr: tempArr}); //setting all images' property "clicked" back to false;
-
-      console.log(JSON.stringify(this.state.imgArr));
-      this.shuffleArray();
+    }
+    else{ //if this image was clicked before
+      this.restartGame();
     }
     
   }
-
   
+  //========= UPDATE CLICKED IMG
   clickedImage = (target) => { //update img (set "clikced" to true)
     const tempArr = this.state.imgArr;
     tempArr[target].clicked = true; //setting target's property "clicked" to true;
@@ -67,14 +58,31 @@ class App extends React.Component {
 
     // shuffle array
     this.shuffleArray();
+    this.setState({message: "Good. Keep going.."});
   }
 
+  //========== RESTART GAME
+  restartGame = () => {
+    this.setState({score:0});//set score back to 0
+
+    const tempArr = this.state.imgArr;
+    for(let i=0; i<tempArr.length;i++){
+      tempArr[i].clicked = false;
+    }
+    this.setState({imgArr: tempArr}); //setting all images' property "clicked" back to false;
+
+    console.log(JSON.stringify(this.state.imgArr));
+    this.shuffleArray();
+
+    this.setState({message: "Try again :)"});
+  }
 
 
   render(){
     return (
       <Wrapper>
         <Header
+        pTag={this.state.message}
         score={this.state.score}
         topScore={this.state.topScore}
         />
