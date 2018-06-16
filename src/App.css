@@ -1,4 +1,11 @@
+body{
+  background-color: #eaeced;
+}
 .container {
   padding-top:100px;
   padding-bottom:10px;
+}
+.rules {
+  font-family: 'Jua', sans-serif;
+  color: rgb(15, 21, 27);
 }

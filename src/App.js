@@ -89,7 +89,7 @@ class App extends React.Component {
         <Jumbotron/>
         <div className="container" id="game">
           <div className="row justify-content-center">
-            <p className="lead">Click on an image to earn points, but don't click on any more than once!</p> 
+            <p className="lead rules">Click on an image to earn points, but don't click on any more than once!</p> 
           </div>
           <div className="row justify-content-center">
             {this.state.imgArr.map((oneImg, index)=>
